@@ -55,6 +55,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tyuiu.ShtolAA.Sprint7.Project.V4.Lib\Tyuiu.ShtolAA.Sprint7.Project.V4.Lib.csproj">
+      <Project>{8bc3d9d0-372c-4d85-8693-d0eb2efbfa60}</Project>
+      <Name>Tyuiu.ShtolAA.Sprint7.Project.V4.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
