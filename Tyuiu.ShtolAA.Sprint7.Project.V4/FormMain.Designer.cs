@@ -47,14 +47,27 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxaverage_SAA = new System.Windows.Forms.TextBox();
             this.textBoxmin_SAA = new System.Windows.Forms.TextBox();
             this.textBoxMax_SAA = new System.Windows.Forms.TextBox();
+            this.buttonAddition_SAA = new System.Windows.Forms.Button();
+            this.buttonDelete_SAA = new System.Windows.Forms.Button();
+            this.groupBoxSorting_SAA = new System.Windows.Forms.GroupBox();
+            this.groupBoxFiltering_SAA = new System.Windows.Forms.GroupBox();
+            this.dataGridViewOpenFile_SAA = new System.Windows.Forms.DataGridView();
+            this.buttonSorting_SAA = new System.Windows.Forms.Button();
+            this.buttonFiltering_SAA = new System.Windows.Forms.Button();
             this.panelbasic_SAA.SuspendLayout();
             this.panelinformation_SAA.SuspendLayout();
             this.groupBoxstatic_SAA.SuspendLayout();
+            this.groupBoxSorting_SAA.SuspendLayout();
+            this.groupBoxFiltering_SAA.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpenFile_SAA)).BeginInit();
             this.SuspendLayout();
             // 
             // panelbasic_SAA
             // 
             this.panelbasic_SAA.BackColor = System.Drawing.Color.LemonChiffon;
+            this.panelbasic_SAA.Controls.Add(this.dataGridViewOpenFile_SAA);
+            this.panelbasic_SAA.Controls.Add(this.groupBoxFiltering_SAA);
+            this.panelbasic_SAA.Controls.Add(this.groupBoxSorting_SAA);
             this.panelbasic_SAA.Controls.Add(this.buttonInfo_SAA);
             this.panelbasic_SAA.Controls.Add(this.buttonguide_SAA);
             this.panelbasic_SAA.Controls.Add(this.buttoncharts_SAA);
@@ -65,12 +78,15 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.panelbasic_SAA.Name = "panelbasic_SAA";
             this.panelbasic_SAA.Size = new System.Drawing.Size(1354, 711);
             this.panelbasic_SAA.TabIndex = 0;
+            this.panelbasic_SAA.Paint += new System.Windows.Forms.PaintEventHandler(this.panelbasic_SAA_Paint);
             // 
             // panelinformation_SAA
             // 
             this.panelinformation_SAA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelinformation_SAA.BackColor = System.Drawing.Color.Wheat;
+            this.panelinformation_SAA.Controls.Add(this.buttonDelete_SAA);
+            this.panelinformation_SAA.Controls.Add(this.buttonAddition_SAA);
             this.panelinformation_SAA.Controls.Add(this.groupBoxstatic_SAA);
             this.panelinformation_SAA.Location = new System.Drawing.Point(0, 579);
             this.panelinformation_SAA.Name = "panelinformation_SAA";
@@ -124,7 +140,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.buttonInfo_SAA.TabIndex = 4;
             this.buttonInfo_SAA.Text = "О программе";
             this.buttonInfo_SAA.UseVisualStyleBackColor = true;
-            this.buttonInfo_SAA.Click += new System.EventHandler(this.button4_Click);
+        
             // 
             // groupBoxstatic_SAA
             // 
@@ -203,7 +219,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.labelmax_SAA.Size = new System.Drawing.Size(172, 17);
             this.labelmax_SAA.TabIndex = 4;
             this.labelmax_SAA.Text = "Максимальное значение";
-            this.labelmax_SAA.Click += new System.EventHandler(this.label4_Click);
+         
             // 
             // textBoxKolvo_SAA
             // 
@@ -222,7 +238,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxSum_SAA.Multiline = true;
             this.textBoxSum_SAA.Name = "textBoxSum_SAA";
             this.textBoxSum_SAA.ReadOnly = true;
-            this.textBoxSum_SAA.Size = new System.Drawing.Size(100, 22);
+            this.textBoxSum_SAA.Size = new System.Drawing.Size(111, 22);
             this.textBoxSum_SAA.TabIndex = 6;
             // 
             // textBoxaverage_SAA
@@ -232,7 +248,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxaverage_SAA.Multiline = true;
             this.textBoxaverage_SAA.Name = "textBoxaverage_SAA";
             this.textBoxaverage_SAA.ReadOnly = true;
-            this.textBoxaverage_SAA.Size = new System.Drawing.Size(150, 22);
+            this.textBoxaverage_SAA.Size = new System.Drawing.Size(137, 22);
             this.textBoxaverage_SAA.TabIndex = 7;
             // 
             // textBoxmin_SAA
@@ -242,7 +258,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxmin_SAA.Multiline = true;
             this.textBoxmin_SAA.Name = "textBoxmin_SAA";
             this.textBoxmin_SAA.ReadOnly = true;
-            this.textBoxmin_SAA.Size = new System.Drawing.Size(184, 22);
+            this.textBoxmin_SAA.Size = new System.Drawing.Size(166, 22);
             this.textBoxmin_SAA.TabIndex = 8;
             // 
             // textBoxMax_SAA
@@ -252,8 +268,77 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxMax_SAA.Multiline = true;
             this.textBoxMax_SAA.Name = "textBoxMax_SAA";
             this.textBoxMax_SAA.ReadOnly = true;
-            this.textBoxMax_SAA.Size = new System.Drawing.Size(192, 22);
+            this.textBoxMax_SAA.Size = new System.Drawing.Size(173, 22);
             this.textBoxMax_SAA.TabIndex = 9;
+            // 
+            // buttonAddition_SAA
+            // 
+            this.buttonAddition_SAA.Location = new System.Drawing.Point(1094, 17);
+            this.buttonAddition_SAA.Name = "buttonAddition_SAA";
+            this.buttonAddition_SAA.Size = new System.Drawing.Size(166, 46);
+            this.buttonAddition_SAA.TabIndex = 1;
+            this.buttonAddition_SAA.Text = "Добавить";
+            this.buttonAddition_SAA.UseVisualStyleBackColor = true;
+            this.buttonAddition_SAA.Click += new System.EventHandler(this.buttonAddition_SAA_Click);
+            // 
+            // buttonDelete_SAA
+            // 
+            this.buttonDelete_SAA.Location = new System.Drawing.Point(1094, 69);
+            this.buttonDelete_SAA.Name = "buttonDelete_SAA";
+            this.buttonDelete_SAA.Size = new System.Drawing.Size(166, 46);
+            this.buttonDelete_SAA.TabIndex = 2;
+            this.buttonDelete_SAA.Text = "Удалить";
+            this.buttonDelete_SAA.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxSorting_SAA
+            // 
+            this.groupBoxSorting_SAA.BackColor = System.Drawing.Color.Tan;
+            this.groupBoxSorting_SAA.Controls.Add(this.buttonSorting_SAA);
+            this.groupBoxSorting_SAA.Location = new System.Drawing.Point(1094, 142);
+            this.groupBoxSorting_SAA.Name = "groupBoxSorting_SAA";
+            this.groupBoxSorting_SAA.Size = new System.Drawing.Size(241, 156);
+            this.groupBoxSorting_SAA.TabIndex = 5;
+            this.groupBoxSorting_SAA.TabStop = false;
+            this.groupBoxSorting_SAA.Text = "Сортировка";
+            // 
+            // groupBoxFiltering_SAA
+            // 
+            this.groupBoxFiltering_SAA.BackColor = System.Drawing.Color.Tan;
+            this.groupBoxFiltering_SAA.Controls.Add(this.buttonFiltering_SAA);
+            this.groupBoxFiltering_SAA.Location = new System.Drawing.Point(1094, 359);
+            this.groupBoxFiltering_SAA.Name = "groupBoxFiltering_SAA";
+            this.groupBoxFiltering_SAA.Size = new System.Drawing.Size(241, 156);
+            this.groupBoxFiltering_SAA.TabIndex = 6;
+            this.groupBoxFiltering_SAA.TabStop = false;
+            this.groupBoxFiltering_SAA.Text = "Фильтрация";
+            // 
+            // dataGridViewOpenFile_SAA
+            // 
+            this.dataGridViewOpenFile_SAA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOpenFile_SAA.Location = new System.Drawing.Point(15, 112);
+            this.dataGridViewOpenFile_SAA.Name = "dataGridViewOpenFile_SAA";
+            this.dataGridViewOpenFile_SAA.RowHeadersWidth = 51;
+            this.dataGridViewOpenFile_SAA.RowTemplate.Height = 24;
+            this.dataGridViewOpenFile_SAA.Size = new System.Drawing.Size(1051, 440);
+            this.dataGridViewOpenFile_SAA.TabIndex = 7;
+            // 
+            // buttonSorting_SAA
+            // 
+            this.buttonSorting_SAA.Location = new System.Drawing.Point(43, 117);
+            this.buttonSorting_SAA.Name = "buttonSorting_SAA";
+            this.buttonSorting_SAA.Size = new System.Drawing.Size(159, 33);
+            this.buttonSorting_SAA.TabIndex = 0;
+            this.buttonSorting_SAA.Text = "Убрать сортировку";
+            this.buttonSorting_SAA.UseVisualStyleBackColor = true;
+            // 
+            // buttonFiltering_SAA
+            // 
+            this.buttonFiltering_SAA.Location = new System.Drawing.Point(43, 116);
+            this.buttonFiltering_SAA.Name = "buttonFiltering_SAA";
+            this.buttonFiltering_SAA.Size = new System.Drawing.Size(159, 34);
+            this.buttonFiltering_SAA.TabIndex = 0;
+            this.buttonFiltering_SAA.Text = "Убрать фильтр";
+            this.buttonFiltering_SAA.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
@@ -270,6 +355,9 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.panelinformation_SAA.ResumeLayout(false);
             this.groupBoxstatic_SAA.ResumeLayout(false);
             this.groupBoxstatic_SAA.PerformLayout();
+            this.groupBoxSorting_SAA.ResumeLayout(false);
+            this.groupBoxFiltering_SAA.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpenFile_SAA)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,6 +382,13 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
         private System.Windows.Forms.Label labelaverage_SAA;
         private System.Windows.Forms.Label labelsum_SAA;
         private System.Windows.Forms.Label labelKolvo_SAA;
+        private System.Windows.Forms.Button buttonDelete_SAA;
+        private System.Windows.Forms.Button buttonAddition_SAA;
+        private System.Windows.Forms.DataGridView dataGridViewOpenFile_SAA;
+        private System.Windows.Forms.GroupBox groupBoxFiltering_SAA;
+        private System.Windows.Forms.GroupBox groupBoxSorting_SAA;
+        private System.Windows.Forms.Button buttonFiltering_SAA;
+        private System.Windows.Forms.Button buttonSorting_SAA;
     }
 }
 
