@@ -16,5 +16,10 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
         {
             InitializeComponent();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
