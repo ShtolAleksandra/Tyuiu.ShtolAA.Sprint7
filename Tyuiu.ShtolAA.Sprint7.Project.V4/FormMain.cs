@@ -72,7 +72,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
                 dataGridViewOpenFile_SAA.Rows.Clear();
                 dataGridViewOpenFile_SAA.Columns.Clear();
                 dataGridViewOpenFile_SAA.RowCount = rows + 1;
-                dataGridViewOpenFile_SAA.ColumnCount = columns + 10;
+                dataGridViewOpenFile_SAA.ColumnCount = columns;
 
                 for (int i = 0; i < rows; i++)
                 {
@@ -238,6 +238,66 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
                         }
                     }
                 }
+            }
+        }
+        static string[,] mtrxSort;
+        static int trip = 0;
+        private void buttonSorting_SAA_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewOpenFile_SAA.RowCount != 0 && trip != 0)
+            {
+                for (int i = 0; i < dataGridViewOpenFile_SAA.RowCount - 1; i++)
+                {
+                    for (int j = 0; j < dataGridViewOpenFile_SAA.ColumnCount - 1; j++)
+                    {
+                        dataGridViewOpenFile_SAA.Rows[i].Cells[j].Value = mtrxSort[i, j];
+                        dataGridViewOpenFile_SAA.Rows[i].Cells[j].Selected = false;
+                    }
+                }
+            }
+            else if (dataGridViewOpenFile_SAA.RowCount != 0 && trip == 0) MessageBox.Show("Надо нажимать на пустое поле ввода сортировки", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void comboBoxSort_SAA_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void buttonSave_SAA_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveFileDialogProject_SAA.FileName = "NewFileC#.csv";
+                saveFileDialogProject_SAA.InitialDirectory = @"C:\Users\user\Desktop";
+                if (saveFileDialogProject_SAA.ShowDialog() == DialogResult.OK)
+                {
+                    string savepath = saveFileDialogProject_SAA.FileName;
+
+                    if (File.Exists(savepath)) File.Delete(savepath);
+
+                    int rows = dataGridViewOpenFile_SAA.RowCount;
+                    int columns = dataGridViewOpenFile_SAA.ColumnCount;
+
+                    StringBuilder strBuilder = new StringBuilder();
+
+                    for (int i = 0; i < rows; i++)
+                    {
+                        for (int j = 0; j < columns; j++)
+                        {
+                            strBuilder.Append(dataGridViewOpenFile_SAA.Rows[i].Cells[j].Value);
+
+                            if (j != columns - 1) strBuilder.Append(",");
+                        }
+                        strBuilder.AppendLine();
+                    }
+                    File.WriteAllText(savepath, strBuilder.ToString(), Encoding.GetEncoding(1251));
+                    MessageBox.Show("Файл успешно сохранен", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Файл не сохранен", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

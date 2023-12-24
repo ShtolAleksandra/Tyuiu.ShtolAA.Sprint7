@@ -38,7 +38,6 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxFiltr_SAA = new System.Windows.Forms.TextBox();
             this.buttonFiltering_SAA = new System.Windows.Forms.Button();
             this.groupBoxSorting_SAA = new System.Windows.Forms.GroupBox();
-            this.textBoxSort_SAA = new System.Windows.Forms.TextBox();
             this.buttonSorting_SAA = new System.Windows.Forms.Button();
             this.buttonInfo_SAA = new System.Windows.Forms.Button();
             this.buttonguide_SAA = new System.Windows.Forms.Button();
@@ -62,6 +61,8 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.toolTipProject_SAA = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialogData_SAA = new System.Windows.Forms.OpenFileDialog();
             this.buttonSave_SAA = new System.Windows.Forms.Button();
+            this.comboBoxSort_SAA = new System.Windows.Forms.ComboBox();
+            this.saveFileDialogProject_SAA = new System.Windows.Forms.SaveFileDialog();
             this.panelbasic_SAA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpenFile_SAA)).BeginInit();
             this.groupBoxFiltering_SAA.SuspendLayout();
@@ -163,7 +164,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             // 
             this.groupBoxSorting_SAA.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.groupBoxSorting_SAA.BackColor = System.Drawing.Color.Tan;
-            this.groupBoxSorting_SAA.Controls.Add(this.textBoxSort_SAA);
+            this.groupBoxSorting_SAA.Controls.Add(this.comboBoxSort_SAA);
             this.groupBoxSorting_SAA.Controls.Add(this.buttonSorting_SAA);
             this.groupBoxSorting_SAA.Location = new System.Drawing.Point(1094, 142);
             this.groupBoxSorting_SAA.Name = "groupBoxSorting_SAA";
@@ -171,14 +172,6 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.groupBoxSorting_SAA.TabIndex = 5;
             this.groupBoxSorting_SAA.TabStop = false;
             this.groupBoxSorting_SAA.Text = "Сортировка";
-            // 
-            // textBoxSort_SAA
-            // 
-            this.textBoxSort_SAA.Location = new System.Drawing.Point(43, 58);
-            this.textBoxSort_SAA.Multiline = true;
-            this.textBoxSort_SAA.Name = "textBoxSort_SAA";
-            this.textBoxSort_SAA.Size = new System.Drawing.Size(159, 32);
-            this.textBoxSort_SAA.TabIndex = 1;
             // 
             // buttonSorting_SAA
             // 
@@ -189,6 +182,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.buttonSorting_SAA.TabIndex = 0;
             this.buttonSorting_SAA.Text = "Убрать сортировку";
             this.buttonSorting_SAA.UseVisualStyleBackColor = true;
+            this.buttonSorting_SAA.Click += new System.EventHandler(this.buttonSorting_SAA_Click);
             // 
             // buttonInfo_SAA
             // 
@@ -426,7 +420,17 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.buttonSave_SAA.TabIndex = 10;
             this.buttonSave_SAA.Text = "Сохранить";
             this.buttonSave_SAA.UseVisualStyleBackColor = true;
+            this.buttonSave_SAA.Click += new System.EventHandler(this.buttonSave_SAA_Click);
             this.buttonSave_SAA.MouseEnter += new System.EventHandler(this.buttonSave_SAA_MouseEnter);
+            // 
+            // comboBoxSort_SAA
+            // 
+            this.comboBoxSort_SAA.FormattingEnabled = true;
+            this.comboBoxSort_SAA.Location = new System.Drawing.Point(43, 61);
+            this.comboBoxSort_SAA.Name = "comboBoxSort_SAA";
+            this.comboBoxSort_SAA.Size = new System.Drawing.Size(159, 24);
+            this.comboBoxSort_SAA.TabIndex = 1;
+            this.comboBoxSort_SAA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxSort_SAA_KeyDown);
             // 
             // FormMain
             // 
@@ -445,7 +449,6 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.groupBoxFiltering_SAA.ResumeLayout(false);
             this.groupBoxFiltering_SAA.PerformLayout();
             this.groupBoxSorting_SAA.ResumeLayout(false);
-            this.groupBoxSorting_SAA.PerformLayout();
             this.panelinformation_SAA.ResumeLayout(false);
             this.groupBoxstatic_SAA.ResumeLayout(false);
             this.groupBoxstatic_SAA.PerformLayout();
@@ -483,10 +486,11 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
         private System.Windows.Forms.Label labelSearch_SAA;
         private System.Windows.Forms.TextBox textBoxSearch_SAA;
         private System.Windows.Forms.TextBox textBoxFiltr_SAA;
-        private System.Windows.Forms.TextBox textBoxSort_SAA;
         private System.Windows.Forms.ToolTip toolTipProject_SAA;
         private System.Windows.Forms.OpenFileDialog openFileDialogData_SAA;
         private System.Windows.Forms.Button buttonSave_SAA;
+        private System.Windows.Forms.ComboBox comboBoxSort_SAA;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogProject_SAA;
     }
 }
 
