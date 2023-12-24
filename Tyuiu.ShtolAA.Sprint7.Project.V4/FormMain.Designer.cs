@@ -60,6 +60,8 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.labelsum_SAA = new System.Windows.Forms.Label();
             this.labelKolvo_SAA = new System.Windows.Forms.Label();
             this.toolTipProject_SAA = new System.Windows.Forms.ToolTip(this.components);
+            this.openFileDialogData_SAA = new System.Windows.Forms.OpenFileDialog();
+            this.buttonSave_SAA = new System.Windows.Forms.Button();
             this.panelbasic_SAA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpenFile_SAA)).BeginInit();
             this.groupBoxFiltering_SAA.SuspendLayout();
@@ -71,6 +73,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             // panelbasic_SAA
             // 
             this.panelbasic_SAA.BackColor = System.Drawing.Color.LemonChiffon;
+            this.panelbasic_SAA.Controls.Add(this.buttonSave_SAA);
             this.panelbasic_SAA.Controls.Add(this.labelSearch_SAA);
             this.panelbasic_SAA.Controls.Add(this.textBoxSearch_SAA);
             this.panelbasic_SAA.Controls.Add(this.dataGridViewOpenFile_SAA);
@@ -106,6 +109,9 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxSearch_SAA.Name = "textBoxSearch_SAA";
             this.textBoxSearch_SAA.Size = new System.Drawing.Size(980, 22);
             this.textBoxSearch_SAA.TabIndex = 8;
+            this.textBoxSearch_SAA.TextChanged += new System.EventHandler(this.textBoxSearch_SAA_TextChanged);
+            this.textBoxSearch_SAA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_SAA_KeyDown);
+            this.textBoxSearch_SAA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_SAA_KeyUp);
             // 
             // dataGridViewOpenFile_SAA
             // 
@@ -115,6 +121,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.dataGridViewOpenFile_SAA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOpenFile_SAA.Location = new System.Drawing.Point(15, 106);
             this.dataGridViewOpenFile_SAA.Name = "dataGridViewOpenFile_SAA";
+            this.dataGridViewOpenFile_SAA.ReadOnly = true;
             this.dataGridViewOpenFile_SAA.RowHeadersWidth = 51;
             this.dataGridViewOpenFile_SAA.RowTemplate.Height = 24;
             this.dataGridViewOpenFile_SAA.Size = new System.Drawing.Size(1051, 446);
@@ -150,6 +157,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.buttonFiltering_SAA.TabIndex = 0;
             this.buttonFiltering_SAA.Text = "Убрать фильтр";
             this.buttonFiltering_SAA.UseVisualStyleBackColor = true;
+            this.buttonFiltering_SAA.Click += new System.EventHandler(this.buttonFiltering_SAA_Click);
             // 
             // groupBoxSorting_SAA
             // 
@@ -185,7 +193,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             // buttonInfo_SAA
             // 
             this.buttonInfo_SAA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonInfo_SAA.Location = new System.Drawing.Point(407, 12);
+            this.buttonInfo_SAA.Location = new System.Drawing.Point(514, 13);
             this.buttonInfo_SAA.Name = "buttonInfo_SAA";
             this.buttonInfo_SAA.Size = new System.Drawing.Size(114, 37);
             this.buttonInfo_SAA.TabIndex = 4;
@@ -197,7 +205,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             // buttonguide_SAA
             // 
             this.buttonguide_SAA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonguide_SAA.Location = new System.Drawing.Point(232, 12);
+            this.buttonguide_SAA.Location = new System.Drawing.Point(339, 13);
             this.buttonguide_SAA.Name = "buttonguide_SAA";
             this.buttonguide_SAA.Size = new System.Drawing.Size(169, 37);
             this.buttonguide_SAA.TabIndex = 3;
@@ -209,7 +217,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             // buttoncharts_SAA
             // 
             this.buttoncharts_SAA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttoncharts_SAA.Location = new System.Drawing.Point(122, 12);
+            this.buttoncharts_SAA.Location = new System.Drawing.Point(229, 13);
             this.buttoncharts_SAA.Name = "buttoncharts_SAA";
             this.buttoncharts_SAA.Size = new System.Drawing.Size(104, 37);
             this.buttoncharts_SAA.TabIndex = 2;
@@ -262,6 +270,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.buttonDelete_SAA.TabIndex = 2;
             this.buttonDelete_SAA.Text = "Удалить";
             this.buttonDelete_SAA.UseVisualStyleBackColor = true;
+            this.buttonDelete_SAA.Click += new System.EventHandler(this.buttonDelete_SAA_Click);
             // 
             // buttonAddition_SAA
             // 
@@ -306,6 +315,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxMax_SAA.Name = "textBoxMax_SAA";
             this.textBoxMax_SAA.Size = new System.Drawing.Size(173, 22);
             this.textBoxMax_SAA.TabIndex = 9;
+            this.textBoxMax_SAA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxMax_SAA_KeyUp);
             // 
             // textBoxmin_SAA
             // 
@@ -403,6 +413,21 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.toolTipProject_SAA.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTipProject_SAA.ToolTipTitle = "Подсказка";
             // 
+            // openFileDialogData_SAA
+            // 
+            this.openFileDialogData_SAA.FileName = "openFileDialog1";
+            // 
+            // buttonSave_SAA
+            // 
+            this.buttonSave_SAA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSave_SAA.Location = new System.Drawing.Point(122, 13);
+            this.buttonSave_SAA.Name = "buttonSave_SAA";
+            this.buttonSave_SAA.Size = new System.Drawing.Size(101, 36);
+            this.buttonSave_SAA.TabIndex = 10;
+            this.buttonSave_SAA.Text = "Сохранить";
+            this.buttonSave_SAA.UseVisualStyleBackColor = true;
+            this.buttonSave_SAA.MouseEnter += new System.EventHandler(this.buttonSave_SAA_MouseEnter);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -460,6 +485,8 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
         private System.Windows.Forms.TextBox textBoxFiltr_SAA;
         private System.Windows.Forms.TextBox textBoxSort_SAA;
         private System.Windows.Forms.ToolTip toolTipProject_SAA;
+        private System.Windows.Forms.OpenFileDialog openFileDialogData_SAA;
+        private System.Windows.Forms.Button buttonSave_SAA;
     }
 }
 
