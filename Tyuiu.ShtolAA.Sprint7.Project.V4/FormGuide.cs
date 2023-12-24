@@ -16,5 +16,10 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
         {
             InitializeComponent();
         }
+
+        private void buttonOK_SAA_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -43,6 +43,50 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
                 MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void buttonInfo_SAA_Click(object sender, EventArgs e)
+        {
+            
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
+        }
+
+        private void buttonFile_SAA_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void buttoncharts_SAA_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void buttonguide_SAA_Click(object sender, EventArgs e)
+        {
+            
+            FormGuide formGuide = new FormGuide();
+            formGuide.Show();
+        }
+
+        private void buttonguide_SAA_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipProject_SAA.SetToolTip(buttonguide_SAA, "Открыть краткое руководство");
+        }
+
+        private void buttonInfo_SAA_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipProject_SAA.SetToolTip(buttonInfo_SAA, "Открыть  информацию о разработчике");
+        }
+
+        private void buttoncharts_SAA_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipProject_SAA.SetToolTip(buttoncharts_SAA, "Открыть графики");
+        }
+
+        private void buttonFile_SAA_MouseEnter(object sender, EventArgs e)
+        {
+            toolTipProject_SAA.SetToolTip(buttonFile_SAA, "Открыть файл");
+        }
     }
     
 }

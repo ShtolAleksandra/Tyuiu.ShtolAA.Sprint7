@@ -58,6 +58,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             // 
             // buttonOk_SAA
             // 
+            this.buttonOk_SAA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonOk_SAA.Location = new System.Drawing.Point(438, 199);
             this.buttonOk_SAA.Name = "buttonOk_SAA";
             this.buttonOk_SAA.Size = new System.Drawing.Size(99, 32);
@@ -74,6 +75,9 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.Controls.Add(this.buttonOk_SAA);
             this.Controls.Add(this.textBoxInfo_SAA);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximumSize = new System.Drawing.Size(567, 289);
+            this.MinimumSize = new System.Drawing.Size(567, 289);
             this.Name = "FormAbout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "О программе";

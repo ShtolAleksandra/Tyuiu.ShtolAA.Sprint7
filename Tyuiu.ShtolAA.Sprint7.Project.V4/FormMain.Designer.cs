@@ -29,11 +29,16 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelbasic_SAA = new System.Windows.Forms.Panel();
+            this.labelSearch_SAA = new System.Windows.Forms.Label();
+            this.textBoxSearch_SAA = new System.Windows.Forms.TextBox();
             this.dataGridViewOpenFile_SAA = new System.Windows.Forms.DataGridView();
             this.groupBoxFiltering_SAA = new System.Windows.Forms.GroupBox();
+            this.textBoxFiltr_SAA = new System.Windows.Forms.TextBox();
             this.buttonFiltering_SAA = new System.Windows.Forms.Button();
             this.groupBoxSorting_SAA = new System.Windows.Forms.GroupBox();
+            this.textBoxSort_SAA = new System.Windows.Forms.TextBox();
             this.buttonSorting_SAA = new System.Windows.Forms.Button();
             this.buttonInfo_SAA = new System.Windows.Forms.Button();
             this.buttonguide_SAA = new System.Windows.Forms.Button();
@@ -54,10 +59,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.labelaverage_SAA = new System.Windows.Forms.Label();
             this.labelsum_SAA = new System.Windows.Forms.Label();
             this.labelKolvo_SAA = new System.Windows.Forms.Label();
-            this.textBoxSearch_SAA = new System.Windows.Forms.TextBox();
-            this.labelSearch_SAA = new System.Windows.Forms.Label();
-            this.textBoxSort_SAA = new System.Windows.Forms.TextBox();
-            this.textBoxFiltr_SAA = new System.Windows.Forms.TextBox();
+            this.toolTipProject_SAA = new System.Windows.Forms.ToolTip(this.components);
             this.panelbasic_SAA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpenFile_SAA)).BeginInit();
             this.groupBoxFiltering_SAA.SuspendLayout();
@@ -86,6 +88,25 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.panelbasic_SAA.TabIndex = 0;
             this.panelbasic_SAA.Paint += new System.Windows.Forms.PaintEventHandler(this.panelbasic_SAA_Paint);
             // 
+            // labelSearch_SAA
+            // 
+            this.labelSearch_SAA.BackColor = System.Drawing.Color.Tan;
+            this.labelSearch_SAA.Location = new System.Drawing.Point(22, 66);
+            this.labelSearch_SAA.Name = "labelSearch_SAA";
+            this.labelSearch_SAA.Size = new System.Drawing.Size(58, 22);
+            this.labelSearch_SAA.TabIndex = 9;
+            this.labelSearch_SAA.Text = "Поиск";
+            // 
+            // textBoxSearch_SAA
+            // 
+            this.textBoxSearch_SAA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSearch_SAA.Location = new System.Drawing.Point(86, 66);
+            this.textBoxSearch_SAA.Name = "textBoxSearch_SAA";
+            this.textBoxSearch_SAA.Size = new System.Drawing.Size(980, 22);
+            this.textBoxSearch_SAA.TabIndex = 8;
+            // 
             // dataGridViewOpenFile_SAA
             // 
             this.dataGridViewOpenFile_SAA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -112,8 +133,17 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.groupBoxFiltering_SAA.TabStop = false;
             this.groupBoxFiltering_SAA.Text = "Фильтрация";
             // 
+            // textBoxFiltr_SAA
+            // 
+            this.textBoxFiltr_SAA.Location = new System.Drawing.Point(43, 52);
+            this.textBoxFiltr_SAA.Multiline = true;
+            this.textBoxFiltr_SAA.Name = "textBoxFiltr_SAA";
+            this.textBoxFiltr_SAA.Size = new System.Drawing.Size(159, 32);
+            this.textBoxFiltr_SAA.TabIndex = 1;
+            // 
             // buttonFiltering_SAA
             // 
+            this.buttonFiltering_SAA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFiltering_SAA.Location = new System.Drawing.Point(43, 116);
             this.buttonFiltering_SAA.Name = "buttonFiltering_SAA";
             this.buttonFiltering_SAA.Size = new System.Drawing.Size(159, 34);
@@ -134,8 +164,17 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.groupBoxSorting_SAA.TabStop = false;
             this.groupBoxSorting_SAA.Text = "Сортировка";
             // 
+            // textBoxSort_SAA
+            // 
+            this.textBoxSort_SAA.Location = new System.Drawing.Point(43, 58);
+            this.textBoxSort_SAA.Multiline = true;
+            this.textBoxSort_SAA.Name = "textBoxSort_SAA";
+            this.textBoxSort_SAA.Size = new System.Drawing.Size(159, 32);
+            this.textBoxSort_SAA.TabIndex = 1;
+            // 
             // buttonSorting_SAA
             // 
+            this.buttonSorting_SAA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSorting_SAA.Location = new System.Drawing.Point(43, 117);
             this.buttonSorting_SAA.Name = "buttonSorting_SAA";
             this.buttonSorting_SAA.Size = new System.Drawing.Size(159, 33);
@@ -152,6 +191,8 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.buttonInfo_SAA.TabIndex = 4;
             this.buttonInfo_SAA.Text = "О программе";
             this.buttonInfo_SAA.UseVisualStyleBackColor = true;
+            this.buttonInfo_SAA.Click += new System.EventHandler(this.buttonInfo_SAA_Click);
+            this.buttonInfo_SAA.MouseEnter += new System.EventHandler(this.buttonInfo_SAA_MouseEnter);
             // 
             // buttonguide_SAA
             // 
@@ -162,6 +203,8 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.buttonguide_SAA.TabIndex = 3;
             this.buttonguide_SAA.Text = "Краткое руководство";
             this.buttonguide_SAA.UseVisualStyleBackColor = true;
+            this.buttonguide_SAA.Click += new System.EventHandler(this.buttonguide_SAA_Click);
+            this.buttonguide_SAA.MouseEnter += new System.EventHandler(this.buttonguide_SAA_MouseEnter);
             // 
             // buttoncharts_SAA
             // 
@@ -172,6 +215,8 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.buttoncharts_SAA.TabIndex = 2;
             this.buttoncharts_SAA.Text = "Графики";
             this.buttoncharts_SAA.UseVisualStyleBackColor = true;
+            this.buttoncharts_SAA.Click += new System.EventHandler(this.buttoncharts_SAA_Click);
+            this.buttoncharts_SAA.MouseEnter += new System.EventHandler(this.buttoncharts_SAA_MouseEnter);
             // 
             // buttonFile_SAA
             // 
@@ -181,7 +226,10 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.buttonFile_SAA.Size = new System.Drawing.Size(104, 36);
             this.buttonFile_SAA.TabIndex = 1;
             this.buttonFile_SAA.Text = "Файл";
+            this.toolTipProject_SAA.SetToolTip(this.buttonFile_SAA, "\r\n");
             this.buttonFile_SAA.UseVisualStyleBackColor = true;
+            this.buttonFile_SAA.Click += new System.EventHandler(this.buttonFile_SAA_Click);
+            this.buttonFile_SAA.MouseEnter += new System.EventHandler(this.buttonFile_SAA_MouseEnter);
             // 
             // splitter1
             // 
@@ -207,6 +255,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             // buttonDelete_SAA
             // 
             this.buttonDelete_SAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDelete_SAA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDelete_SAA.Location = new System.Drawing.Point(1094, 69);
             this.buttonDelete_SAA.Name = "buttonDelete_SAA";
             this.buttonDelete_SAA.Size = new System.Drawing.Size(166, 46);
@@ -217,6 +266,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             // buttonAddition_SAA
             // 
             this.buttonAddition_SAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddition_SAA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddition_SAA.Location = new System.Drawing.Point(1094, 17);
             this.buttonAddition_SAA.Name = "buttonAddition_SAA";
             this.buttonAddition_SAA.Size = new System.Drawing.Size(166, 46);
@@ -254,7 +304,6 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxMax_SAA.Location = new System.Drawing.Point(781, 55);
             this.textBoxMax_SAA.Multiline = true;
             this.textBoxMax_SAA.Name = "textBoxMax_SAA";
-            this.textBoxMax_SAA.ReadOnly = true;
             this.textBoxMax_SAA.Size = new System.Drawing.Size(173, 22);
             this.textBoxMax_SAA.TabIndex = 9;
             // 
@@ -264,7 +313,6 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxmin_SAA.Location = new System.Drawing.Point(548, 55);
             this.textBoxmin_SAA.Multiline = true;
             this.textBoxmin_SAA.Name = "textBoxmin_SAA";
-            this.textBoxmin_SAA.ReadOnly = true;
             this.textBoxmin_SAA.Size = new System.Drawing.Size(166, 22);
             this.textBoxmin_SAA.TabIndex = 8;
             // 
@@ -274,7 +322,6 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxaverage_SAA.Location = new System.Drawing.Point(351, 55);
             this.textBoxaverage_SAA.Multiline = true;
             this.textBoxaverage_SAA.Name = "textBoxaverage_SAA";
-            this.textBoxaverage_SAA.ReadOnly = true;
             this.textBoxaverage_SAA.Size = new System.Drawing.Size(137, 22);
             this.textBoxaverage_SAA.TabIndex = 7;
             // 
@@ -284,7 +331,6 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxSum_SAA.Location = new System.Drawing.Point(190, 55);
             this.textBoxSum_SAA.Multiline = true;
             this.textBoxSum_SAA.Name = "textBoxSum_SAA";
-            this.textBoxSum_SAA.ReadOnly = true;
             this.textBoxSum_SAA.Size = new System.Drawing.Size(111, 22);
             this.textBoxSum_SAA.TabIndex = 6;
             // 
@@ -294,7 +340,6 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxKolvo_SAA.Location = new System.Drawing.Point(9, 55);
             this.textBoxKolvo_SAA.Multiline = true;
             this.textBoxKolvo_SAA.Name = "textBoxKolvo_SAA";
-            this.textBoxKolvo_SAA.ReadOnly = true;
             this.textBoxKolvo_SAA.Size = new System.Drawing.Size(134, 22);
             this.textBoxKolvo_SAA.TabIndex = 5;
             // 
@@ -353,40 +398,10 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.labelKolvo_SAA.TabIndex = 0;
             this.labelKolvo_SAA.Text = "Количество строк";
             // 
-            // textBoxSearch_SAA
+            // toolTipProject_SAA
             // 
-            this.textBoxSearch_SAA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSearch_SAA.Location = new System.Drawing.Point(86, 66);
-            this.textBoxSearch_SAA.Name = "textBoxSearch_SAA";
-            this.textBoxSearch_SAA.Size = new System.Drawing.Size(980, 22);
-            this.textBoxSearch_SAA.TabIndex = 8;
-            // 
-            // labelSearch_SAA
-            // 
-            this.labelSearch_SAA.BackColor = System.Drawing.Color.Tan;
-            this.labelSearch_SAA.Location = new System.Drawing.Point(22, 66);
-            this.labelSearch_SAA.Name = "labelSearch_SAA";
-            this.labelSearch_SAA.Size = new System.Drawing.Size(58, 22);
-            this.labelSearch_SAA.TabIndex = 9;
-            this.labelSearch_SAA.Text = "Поиск";
-            // 
-            // textBoxSort_SAA
-            // 
-            this.textBoxSort_SAA.Location = new System.Drawing.Point(43, 58);
-            this.textBoxSort_SAA.Multiline = true;
-            this.textBoxSort_SAA.Name = "textBoxSort_SAA";
-            this.textBoxSort_SAA.Size = new System.Drawing.Size(159, 32);
-            this.textBoxSort_SAA.TabIndex = 1;
-            // 
-            // textBoxFiltr_SAA
-            // 
-            this.textBoxFiltr_SAA.Location = new System.Drawing.Point(43, 52);
-            this.textBoxFiltr_SAA.Multiline = true;
-            this.textBoxFiltr_SAA.Name = "textBoxFiltr_SAA";
-            this.textBoxFiltr_SAA.Size = new System.Drawing.Size(159, 32);
-            this.textBoxFiltr_SAA.TabIndex = 1;
+            this.toolTipProject_SAA.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTipProject_SAA.ToolTipTitle = "Подсказка";
             // 
             // FormMain
             // 
@@ -444,6 +459,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
         private System.Windows.Forms.TextBox textBoxSearch_SAA;
         private System.Windows.Forms.TextBox textBoxFiltr_SAA;
         private System.Windows.Forms.TextBox textBoxSort_SAA;
+        private System.Windows.Forms.ToolTip toolTipProject_SAA;
     }
 }
 
