@@ -161,6 +161,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxFiltr_SAA.Size = new System.Drawing.Size(159, 32);
             this.textBoxFiltr_SAA.TabIndex = 1;
             this.textBoxFiltr_SAA.TextChanged += new System.EventHandler(this.textBoxFiltr_SAA_TextChanged);
+            this.textBoxFiltr_SAA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxFiltr_SAA_KeyDown);
             this.textBoxFiltr_SAA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxFiltr_SAA_KeyUp);
             // 
             // buttonFiltering_SAA
@@ -196,6 +197,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.comboBoxSort_SAA.Name = "comboBoxSort_SAA";
             this.comboBoxSort_SAA.Size = new System.Drawing.Size(159, 24);
             this.comboBoxSort_SAA.TabIndex = 1;
+            this.comboBoxSort_SAA.SelectedIndexChanged += new System.EventHandler(this.comboBoxSort_SAA_SelectedIndexChanged);
             this.comboBoxSort_SAA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxSort_SAA_KeyDown);
             // 
             // buttonSorting_SAA

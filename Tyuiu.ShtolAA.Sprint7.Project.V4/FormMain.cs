@@ -354,7 +354,35 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
 
         private void comboBoxSort_SAA_KeyDown(object sender, KeyEventArgs e)
         {
-            
+            if (dataGridViewOpenFile_SAA.RowCount != 0)
+            {
+                mtrxSort = new string[dataGridViewOpenFile_SAA.RowCount, dataGridViewOpenFile_SAA.ColumnCount];
+                for (int i = 0; i < dataGridViewOpenFile_SAA.RowCount - 1; i++)
+                {
+                    for (int j = 0; j < dataGridViewOpenFile_SAA.ColumnCount - 1; j++)
+                    {
+                        mtrxSort[i, j] = Convert.ToString(dataGridViewOpenFile_SAA.Rows[i].Cells[j].Value);
+                    }
+                }
+                trip++;
+
+                int vozmogno = 0; int k = -1;
+                for (int i = 1; i < dataGridViewOpenFile_SAA.RowCount - 1; i++)
+                {
+                    for (int j = 0; j < dataGridViewOpenFile_SAA.ColumnCount; j++)
+                    {
+                        if (dataGridViewOpenFile_SAA.Rows[i].Cells[j].Value == null) vozmogno++;
+                    }
+                    if (vozmogno == dataGridViewOpenFile_SAA.ColumnCount)
+                    {
+                        k = i;
+                        break;
+                    }
+                    else vozmogno = 0;
+                }
+                if (k > 0) MessageBox.Show("Пожалуйста, удалите все пустые строки, кроме последней", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void buttonSave_SAA_Click(object sender, EventArgs e)
@@ -708,6 +736,139 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
                         if (dataGridViewOpenFile_SAA.Rows[r].Cells[nugno].Selected == true) counter++;
                     }
                     textBoxKolvo_SAA.Text = Convert.ToString(counter);
+                }
+            }
+            else MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void textBoxFiltr_SAA_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (dataGridViewOpenFile_SAA.RowCount != 0)
+            {
+                mtrxFilter = new string[dataGridViewOpenFile_SAA.RowCount, dataGridViewOpenFile_SAA.ColumnCount];
+                for (int i = 0; i < dataGridViewOpenFile_SAA.RowCount - 1; i++)
+                {
+                    for (int j = 0; j < dataGridViewOpenFile_SAA.ColumnCount - 1; j++)
+                    {
+                        mtrxFilter[i, j] = Convert.ToString(dataGridViewOpenFile_SAA.Rows[i].Cells[j].Value);
+                    }
+                }
+                bip++;
+            }
+            else MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void comboBoxSort_SAA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxSort_SAA.SelectedItem != null && dataGridViewOpenFile_SAA.RowCount != 0)
+            {
+                int vozmogno = 0; int k = -1;
+                for (int i = 1; i < dataGridViewOpenFile_SAA.RowCount - 1; i++)
+                {
+                    for (int j = 0; j < dataGridViewOpenFile_SAA.ColumnCount; j++)
+                    {
+                        if (dataGridViewOpenFile_SAA.Rows[i].Cells[j].Value == null) vozmogno++;
+                    }
+                    textBoxMax_SAA.Text = Convert.ToString(vozmogno);
+                    if (vozmogno == dataGridViewOpenFile_SAA.ColumnCount)
+                    {
+                        k = i;
+                        break;
+                    }
+                    else vozmogno = 0;
+                }
+                if (k > 0) MessageBox.Show("Пожалуйста, удалите все пустые строки, кроме последней", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    int kakbuda = 0;
+                    for (int i = 0; i < dataGridViewOpenFile_SAA.RowCount - 1; i++)
+                    {
+                        for (int j = 0; j < dataGridViewOpenFile_SAA.ColumnCount - 1; j++)
+                        {
+                            if (dataGridViewOpenFile_SAA.Rows[i].Cells[j].Selected == false) kakbuda++;
+                        }
+                    }
+                    if (kakbuda != (dataGridViewOpenFile_SAA.RowCount - 1) * (dataGridViewOpenFile_SAA.ColumnCount - 1))
+                    {
+                        int columnIndex = -1;
+                        for (int i = 0; i < dataGridViewOpenFile_SAA.RowCount - 1; i++)
+                        {
+                            for (int j = 0; j < dataGridViewOpenFile_SAA.ColumnCount - 1; j++)
+                            {
+                                if (dataGridViewOpenFile_SAA.Rows[i].Cells[j].Value != null)
+                                {
+                                    if (dataGridViewOpenFile_SAA.Rows[i].Cells[j].Selected == true)
+                                    {
+                                        columnIndex = j;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (columnIndex > -1) break;
+                        }
+
+                        for (int i = 1; i < dataGridViewOpenFile_SAA.RowCount - 1; i++)
+                        {
+                            double cellValue;
+                            if (dataGridViewOpenFile_SAA.Rows[i].Cells[columnIndex].Value != null && double.TryParse(dataGridViewOpenFile_SAA.Rows[i].Cells[columnIndex].Value.ToString(), out cellValue))
+                            {
+                                dataGridViewOpenFile_SAA.Rows[i].Cells[columnIndex].Value = cellValue;
+                            }
+                        }
+
+                        string selectedItem = comboBoxSort_SAA.SelectedItem.ToString();
+                        if (selectedItem == "По возрастанию (от А до Я)" && trip != 0)
+                        {
+                            DataGridViewRow row = dataGridViewOpenFile_SAA.Rows[0];
+                            dataGridViewOpenFile_SAA.Rows.Remove(dataGridViewOpenFile_SAA.Rows[0]);
+
+                            DataGridViewColumn column = dataGridViewOpenFile_SAA.Columns[columnIndex];
+
+                            dataGridViewOpenFile_SAA.Sort(column, ListSortDirection.Ascending);
+                            dataGridViewOpenFile_SAA.Rows.Insert(0, row);
+
+                            for (int i = 0; i < dataGridViewOpenFile_SAA.RowCount - 1; i++)
+                            {
+                                for (int j = 0; j < dataGridViewOpenFile_SAA.ColumnCount - 1; j++)
+                                {
+                                    dataGridViewOpenFile_SAA.Rows[i].Cells[j].Selected = false;
+                                }
+                            }
+                        }
+                        else if (selectedItem == "По убыванию (от Я до А)" && trip != 0)
+                        {
+                            DataGridViewRow row = dataGridViewOpenFile_SAA.Rows[0];
+                            dataGridViewOpenFile_SAA.Rows.Remove(dataGridViewOpenFile_SAA.Rows[0]);
+
+                            DataGridViewColumn column = dataGridViewOpenFile_SAA.Columns[columnIndex];
+
+                            dataGridViewOpenFile_SAA.Sort(column, ListSortDirection.Descending);
+                            dataGridViewOpenFile_SAA.Rows.Insert(0, row);
+
+                            for (int i = 0; i < dataGridViewOpenFile_SAA.RowCount - 1; i++)
+                            {
+                                for (int j = 0; j < dataGridViewOpenFile_SAA.ColumnCount - 1; j++)
+                                {
+                                    dataGridViewOpenFile_SAA.Rows[i].Cells[j].Selected = false;
+                                }
+                            }
+                        }
+                        else MessageBox.Show("Не забудьте нажать на пустое поле ввода сортирвоки!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        textBoxKolvo_SAA.Text = "";
+                        textBoxSum_SAA.Text = "";
+                        textBoxaverage_SAA.Text = "";
+                        textBoxmin_SAA.Text = "";
+                        textBoxMax_SAA.Text = "";
+                    }
+                    else if (kakbuda == (dataGridViewOpenFile_SAA.RowCount - 1) * (dataGridViewOpenFile_SAA.ColumnCount - 1) && trip != 0)
+                    {
+                        MessageBox.Show("Пожалуйста, выберите столбец", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (kakbuda == (dataGridViewOpenFile_SAA.RowCount - 1) * (dataGridViewOpenFile_SAA.ColumnCount - 1) && trip == 0)
+                    {
+                        MessageBox.Show($"{"Пожалуйста, выберите столбец." + "\r"}{"Не забудьте нажать на пустое поле ввода сортирвоки!"}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
