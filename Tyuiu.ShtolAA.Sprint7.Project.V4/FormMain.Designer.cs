@@ -354,6 +354,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxaverage_SAA.Name = "textBoxaverage_SAA";
             this.textBoxaverage_SAA.Size = new System.Drawing.Size(137, 22);
             this.textBoxaverage_SAA.TabIndex = 7;
+            this.textBoxaverage_SAA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxaverage_SAA_KeyUp);
             // 
             // textBoxSum_SAA
             // 
@@ -363,6 +364,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxSum_SAA.Name = "textBoxSum_SAA";
             this.textBoxSum_SAA.Size = new System.Drawing.Size(111, 22);
             this.textBoxSum_SAA.TabIndex = 6;
+            this.textBoxSum_SAA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSum_SAA_KeyUp);
             // 
             // textBoxKolvo_SAA
             // 
@@ -372,6 +374,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxKolvo_SAA.Name = "textBoxKolvo_SAA";
             this.textBoxKolvo_SAA.Size = new System.Drawing.Size(134, 22);
             this.textBoxKolvo_SAA.TabIndex = 5;
+            this.textBoxKolvo_SAA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxKolvo_SAA_KeyUp);
             // 
             // labelmax_SAA
             // 
