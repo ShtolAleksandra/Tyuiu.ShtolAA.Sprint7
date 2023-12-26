@@ -31,6 +31,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
         {
             this.components = new System.ComponentModel.Container();
             this.panelbasic_SAA = new System.Windows.Forms.Panel();
+            this.buttonSave_SAA = new System.Windows.Forms.Button();
             this.labelSearch_SAA = new System.Windows.Forms.Label();
             this.textBoxSearch_SAA = new System.Windows.Forms.TextBox();
             this.dataGridViewOpenFile_SAA = new System.Windows.Forms.DataGridView();
@@ -38,6 +39,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxFiltr_SAA = new System.Windows.Forms.TextBox();
             this.buttonFiltering_SAA = new System.Windows.Forms.Button();
             this.groupBoxSorting_SAA = new System.Windows.Forms.GroupBox();
+            this.comboBoxSort_SAA = new System.Windows.Forms.ComboBox();
             this.buttonSorting_SAA = new System.Windows.Forms.Button();
             this.buttonInfo_SAA = new System.Windows.Forms.Button();
             this.buttonguide_SAA = new System.Windows.Forms.Button();
@@ -60,8 +62,6 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.labelKolvo_SAA = new System.Windows.Forms.Label();
             this.toolTipProject_SAA = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialogData_SAA = new System.Windows.Forms.OpenFileDialog();
-            this.buttonSave_SAA = new System.Windows.Forms.Button();
-            this.comboBoxSort_SAA = new System.Windows.Forms.ComboBox();
             this.saveFileDialogProject_SAA = new System.Windows.Forms.SaveFileDialog();
             this.panelbasic_SAA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpenFile_SAA)).BeginInit();
@@ -91,6 +91,18 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.panelbasic_SAA.Size = new System.Drawing.Size(1354, 711);
             this.panelbasic_SAA.TabIndex = 0;
             this.panelbasic_SAA.Paint += new System.Windows.Forms.PaintEventHandler(this.panelbasic_SAA_Paint);
+            // 
+            // buttonSave_SAA
+            // 
+            this.buttonSave_SAA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSave_SAA.Location = new System.Drawing.Point(122, 13);
+            this.buttonSave_SAA.Name = "buttonSave_SAA";
+            this.buttonSave_SAA.Size = new System.Drawing.Size(101, 36);
+            this.buttonSave_SAA.TabIndex = 10;
+            this.buttonSave_SAA.Text = "Сохранить";
+            this.buttonSave_SAA.UseVisualStyleBackColor = true;
+            this.buttonSave_SAA.Click += new System.EventHandler(this.buttonSave_SAA_Click);
+            this.buttonSave_SAA.MouseEnter += new System.EventHandler(this.buttonSave_SAA_MouseEnter);
             // 
             // labelSearch_SAA
             // 
@@ -148,6 +160,8 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxFiltr_SAA.Name = "textBoxFiltr_SAA";
             this.textBoxFiltr_SAA.Size = new System.Drawing.Size(159, 32);
             this.textBoxFiltr_SAA.TabIndex = 1;
+            this.textBoxFiltr_SAA.TextChanged += new System.EventHandler(this.textBoxFiltr_SAA_TextChanged);
+            this.textBoxFiltr_SAA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxFiltr_SAA_KeyUp);
             // 
             // buttonFiltering_SAA
             // 
@@ -159,6 +173,8 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.buttonFiltering_SAA.Text = "Убрать фильтр";
             this.buttonFiltering_SAA.UseVisualStyleBackColor = true;
             this.buttonFiltering_SAA.Click += new System.EventHandler(this.buttonFiltering_SAA_Click);
+            this.buttonFiltering_SAA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonFiltering_SAA_KeyDown);
+            this.buttonFiltering_SAA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.buttonFiltering_SAA_KeyUp);
             // 
             // groupBoxSorting_SAA
             // 
@@ -172,6 +188,15 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.groupBoxSorting_SAA.TabIndex = 5;
             this.groupBoxSorting_SAA.TabStop = false;
             this.groupBoxSorting_SAA.Text = "Сортировка";
+            // 
+            // comboBoxSort_SAA
+            // 
+            this.comboBoxSort_SAA.FormattingEnabled = true;
+            this.comboBoxSort_SAA.Location = new System.Drawing.Point(43, 61);
+            this.comboBoxSort_SAA.Name = "comboBoxSort_SAA";
+            this.comboBoxSort_SAA.Size = new System.Drawing.Size(159, 24);
+            this.comboBoxSort_SAA.TabIndex = 1;
+            this.comboBoxSort_SAA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxSort_SAA_KeyDown);
             // 
             // buttonSorting_SAA
             // 
@@ -319,6 +344,7 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             this.textBoxmin_SAA.Name = "textBoxmin_SAA";
             this.textBoxmin_SAA.Size = new System.Drawing.Size(166, 22);
             this.textBoxmin_SAA.TabIndex = 8;
+            this.textBoxmin_SAA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxmin_SAA_KeyUp);
             // 
             // textBoxaverage_SAA
             // 
@@ -410,27 +436,6 @@ namespace Tyuiu.ShtolAA.Sprint7.Project.V4
             // openFileDialogData_SAA
             // 
             this.openFileDialogData_SAA.FileName = "openFileDialog1";
-            // 
-            // buttonSave_SAA
-            // 
-            this.buttonSave_SAA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSave_SAA.Location = new System.Drawing.Point(122, 13);
-            this.buttonSave_SAA.Name = "buttonSave_SAA";
-            this.buttonSave_SAA.Size = new System.Drawing.Size(101, 36);
-            this.buttonSave_SAA.TabIndex = 10;
-            this.buttonSave_SAA.Text = "Сохранить";
-            this.buttonSave_SAA.UseVisualStyleBackColor = true;
-            this.buttonSave_SAA.Click += new System.EventHandler(this.buttonSave_SAA_Click);
-            this.buttonSave_SAA.MouseEnter += new System.EventHandler(this.buttonSave_SAA_MouseEnter);
-            // 
-            // comboBoxSort_SAA
-            // 
-            this.comboBoxSort_SAA.FormattingEnabled = true;
-            this.comboBoxSort_SAA.Location = new System.Drawing.Point(43, 61);
-            this.comboBoxSort_SAA.Name = "comboBoxSort_SAA";
-            this.comboBoxSort_SAA.Size = new System.Drawing.Size(159, 24);
-            this.comboBoxSort_SAA.TabIndex = 1;
-            this.comboBoxSort_SAA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxSort_SAA_KeyDown);
             // 
             // FormMain
             // 
